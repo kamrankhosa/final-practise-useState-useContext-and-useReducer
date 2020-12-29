@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
+import Parent from "./Stats/Parent";
+
 
 function App() {
+  let [count, setcount] = useState(10);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div> 
+     <Parent value={count}></Parent>
+     <button onClick={()=>setcount(++count)}>Increment</button>
+     <button onClick={()=>setcount(--count)}>Decrement</button>
     </div>
   );
 }
