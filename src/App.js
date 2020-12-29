@@ -1,12 +1,8 @@
-import React,{useState} from 'react';
-import CounterContext from './ContextApi/CounterContext';
-import Parent from './ContextApi/Parent';
+import React from 'react';
+import Parent from './Reducers/Parent';
 function App() {
-  let value = useState(10)
   return (
-    <CounterContext.Provider value={value}>
-      <Parent></Parent>
-    </CounterContext.Provider>
+    <Parent></Parent>
   );
 }
 
