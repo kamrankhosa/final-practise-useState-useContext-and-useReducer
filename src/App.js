@@ -1,15 +1,12 @@
 import React,{useState} from 'react';
-import Parent from "./Stats/Parent";
-
-
+import CounterContext from './ContextApi/CounterContext';
+import Parent from './ContextApi/Parent';
 function App() {
-  let [count, setcount] = useState(10);
+  let value = useState(10)
   return (
-    <div> 
-     <Parent value={count}></Parent>
-     <button onClick={()=>setcount(++count)}>Increment</button>
-     <button onClick={()=>setcount(--count)}>Decrement</button>
-    </div>
+    <CounterContext.Provider value={value}>
+      <Parent></Parent>
+    </CounterContext.Provider>
   );
 }
 
